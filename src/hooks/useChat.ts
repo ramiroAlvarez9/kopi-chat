@@ -103,11 +103,11 @@ export function useChat(config: UseChatConfig = {}): UseChatResult {
         const openAiMessages = [
           ...(systemPrompt
             ? [
-                {
-                  role: "system" as const,
-                  content: systemPrompt,
-                },
-              ]
+              {
+                role: "system" as const,
+                content: systemPrompt,
+              },
+            ]
             : []),
           ...history.map(({ role, content }) => ({
             role,
@@ -118,7 +118,6 @@ export function useChat(config: UseChatConfig = {}): UseChatResult {
         const content = await createChatCompletion({
           messages: openAiMessages,
           model,
-          temperature,
           signal: abortControllerRef.current.signal,
         });
 

@@ -62,7 +62,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 32px 16px;
-  background: radial-gradient(120% 120% at 50% 0%, rgba(37, 99, 235, 0.08), transparent);
+  background: linear-gradient(90deg, #f43e5d 0%, #d7326a 50%, #9b057c 100%);
 }
 
 .chat-card {

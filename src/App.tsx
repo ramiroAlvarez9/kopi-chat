@@ -29,7 +29,7 @@ function App() {
           <div className="chat-header__profile">
             <Avatar alt="Assistant avatar" size={56} />
             <div>
-              <h1>React Chatbot Template</h1>
+              <h1>Kopi Chat</h1>
               <p>A minimal ChatGPT-style wrapper ready for tooling.</p>
             </div>
           </div>

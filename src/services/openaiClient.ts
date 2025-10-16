@@ -1,6 +1,6 @@
 import type { ChatRole } from "../types/chat";
 
-const OPENAI_CHAT_COMPLETIONS_URL = "https://api.openai.com/v1/chat/completions";
+const OPENAI_CHAT_COMPLETIONS_URL = "https://aoai-hackaton2025-eu2.openai.azure.com/openai/deployments/gpt-5-mini/chat/completions?api-version=2024-02-15-preview";
 
 export interface OpenAIChatMessage {
   role: ChatRole;
@@ -10,7 +10,6 @@ export interface OpenAIChatMessage {
 export interface CreateChatCompletionOptions {
   messages: OpenAIChatMessage[];
   model?: string;
-  temperature?: number;
   signal?: AbortSignal;
 }
 
@@ -35,7 +34,7 @@ interface OpenAIChatCompletionResponse {
 export async function createChatCompletion(
   options: CreateChatCompletionOptions,
 ): Promise<string> {
-  const { messages, model = "gpt-4o-mini", temperature = 0.7, signal } = options;
+  const { messages, model = "gpt-4o-mini", signal } = options;
   const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
 
   if (!apiKey) {
@@ -53,7 +52,6 @@ export async function createChatCompletion(
     body: JSON.stringify({
       model,
       messages,
-      temperature,
     }),
     signal,
   });

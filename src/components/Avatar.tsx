@@ -7,7 +7,7 @@ interface AvatarProps {
   label?: string;
 }
 
-const assistantAvatarUrl = "/bot-avatar.svg";
+const assistantAvatarUrl = "/kopi-avatar.svg";
 
 function AvatarComponent({
   size = 40,
