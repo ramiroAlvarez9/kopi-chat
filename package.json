@@ -1,0 +1,23 @@
+{
+  "name": "kopi-chat",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Minimal React + Vite chatbot template powered by the OpenAI Chat Completions API.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "typescript": "~5.9.3",
+    "vite": "^7.1.7"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  }
+}
