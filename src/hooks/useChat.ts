@@ -20,7 +20,7 @@ interface UseChatResult {
 const DEFAULT_GREETING: ChatMessage = {
   id: "assistant-greeting",
   role: "assistant",
-  content: "Hello! Ask me anything and I'll do my best to help.",
+  content: "Hello! I'm your Kopius Assistant. How can I help you?",
   createdAt: new Date().toISOString(),
 };
 

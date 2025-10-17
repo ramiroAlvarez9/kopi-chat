@@ -2,6 +2,8 @@ import ChatInput from "./components/ChatInput";
 import Avatar from "./components/Avatar";
 import MessageList from "./components/MessageList";
 import { useChat } from "./hooks/useChat";
+import { corporateInfoTool } from "./tools/corporateInfoTool";
+import { firstLoginHumanageTool } from "./tools/firstLoginHumanage";
 
 function App() {
   const {
@@ -15,7 +17,8 @@ function App() {
     retry,
   } = useChat({
     systemPrompt:
-      "You are a concise and friendly AI assistant embedded in a React demo. Keep responses short and helpful.",
+      "You are Kopius' corporate assistant. Answer in English by default, cite the latest internal facts before consulting external sources, and keep responses concise unless asked for details.",
+    tools: [corporateInfoTool, firstLoginHumanageTool],
   });
 
   const handleSend = (value: string) => {
@@ -30,7 +33,7 @@ function App() {
             <Avatar alt="Assistant avatar" size={56} />
             <div>
               <h1>Kopi Chat</h1>
-              <p>A minimal ChatGPT-style wrapper ready for tooling.</p>
+              <p>An Assistant for kopius-related questions</p>
             </div>
           </div>
           {isLoading ? (

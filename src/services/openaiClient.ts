@@ -34,7 +34,7 @@ interface OpenAIChatCompletionResponse {
 export async function createChatCompletion(
   options: CreateChatCompletionOptions,
 ): Promise<string> {
-  const { messages, model = "gpt-4o-mini", signal } = options;
+  const { messages, model = "gpt-5-mini", signal } = options;
   const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
 
   if (!apiKey) {
